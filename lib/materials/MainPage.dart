@@ -60,7 +60,10 @@ class _MainPageState extends State<MainPage> {
                   children: [
                     Text(r.recipeAuthor,
                         style: const TextStyle(color: Colors.white)),
-                    const Icon(Icons.favorite_border_rounded,
+                    Icon(
+                        r.isFavourite
+                            ? Icons.favorite_rounded
+                            : Icons.favorite_border_outlined,
                         color: Colors.pink),
                   ],
                 ),

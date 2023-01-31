@@ -12,6 +12,17 @@ class RecipePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(recipe.recipeName),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Icon(
+              recipe.isFavourite
+                  ? Icons.favorite_rounded
+                  : Icons.favorite_border_outlined,
+              color: Colors.pink,
+            ),
+          )
+        ],
       ),
       body: SafeArea(
         child: Column(

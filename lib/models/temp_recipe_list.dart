@@ -10,7 +10,7 @@ List<Recipe> temp_recipe_list = [
     totalLikes: 1500,
     imageUrl:
         "https://bakerbynature.com/wp-content/uploads/2013/12/IMG_5986-2-500x500.jpg",
-    isFavourite: false,
+    isFavourite: true,
     description:
         "This recipe will teach you how to make pasta yourself, using store bought noodles and jarred sauce!",
     ingredients: [
