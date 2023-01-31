@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_app/materials/MainPage.dart';
+import 'package:recipe_app/materials/RecipePage.dart';
 
 void main() => runApp(MyApp());
+
+Map<String, WidgetBuilder> routes = {"/viewrecipe": (context) => RecipePage()};
 
 class MyApp extends StatelessWidget {
   @override
@@ -13,6 +16,8 @@ class MyApp extends StatelessWidget {
         ),
         body: BodyWidget(),
       ),
+      routes: routes,
+      initialRoute: "/",
     );
   }
 }
