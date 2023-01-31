@@ -24,12 +24,19 @@ class _MainPageState extends State<MainPage> {
   Widget _buildRecipeCard(int i) {
     Recipe r = recipes[i];
     return Card(
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+        side: BorderSide(
+          color: Theme.of(context).colorScheme.outline,
+        ),
+        borderRadius: const BorderRadius.all(Radius.circular(12)),
+      ),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(12)),
           color: Colors.grey[900],
           image: DecorationImage(
-            colorFilter: new ColorFilter.mode(
+            colorFilter: ColorFilter.mode(
                 Colors.black.withOpacity(0.4), BlendMode.dstATop),
             image: NetworkImage(r.imageUrl),
             fit: BoxFit.fill,
@@ -47,21 +54,24 @@ class _MainPageState extends State<MainPage> {
 
                 children: [
                   Text(r.recipeAuthor, style: TextStyle(color: Colors.white)),
-                  Icon(Icons.favorite_border_rounded, color: Colors.pink),
+                  const Icon(Icons.favorite_border_rounded, color: Colors.pink),
                 ],
               ),
               Column(
                 children: [
-                  Row(
-                    children: [
-                      Text(
-                        r.recipeName,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ],
+                  Container(
+                    margin: new EdgeInsets.symmetric(vertical: 5),
+                    child: Row(
+                      children: [
+                        Text(
+                          r.recipeName,
+                          style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -94,13 +104,6 @@ class _MainPageState extends State<MainPage> {
             ],
           ),
         ),
-      ),
-      elevation: 0,
-      shape: RoundedRectangleBorder(
-        side: BorderSide(
-          color: Theme.of(context).colorScheme.outline,
-        ),
-        borderRadius: const BorderRadius.all(Radius.circular(12)),
       ),
     );
   }
